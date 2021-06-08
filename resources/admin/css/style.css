@@ -1,0 +1,53 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.411);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.767);
+}
+
+.cus-scroll-bar::-webkit-scrollbar {
+    width: 6px;
+    visibility: hidden;
+    display: block;
+}
+
+.cus-scroll-bar {
+    width: 180px;
+}
+
+.cus-scroll-bar:hover::-webkit-scrollbar {
+    visibility: visible;
+}
+
+.cus-scroll-bar:hover::-webkit-scrollbar-thumb:hover {
+    background: rgba(61, 61, 61, 0.986);
+}
+
+.word-break {
+    word-wrap: break-word !important;
+    max-width: 250px;
+    min-width: 135px;
+}
+
+.color-box {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: #ccc;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.hover-black:hover {
+    color: black !important;
+}

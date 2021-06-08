@@ -1,0 +1,817 @@
+.image-thumb-tab {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.image-thumb-tab img {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.image-thumb-tab img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.product-image-thumb:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.main-image {
+    position: relative;
+    display: block;
+}
+
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modalLoading {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8) url("http://i.stack.imgur.com/FhHRx.gif") 50% 50% no-repeat;
+}
+
+.background-white {
+    display: none;
+}
+
+.display-none {
+    display: none;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading .modalLoading {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modalLoading {
+    display: block;
+}
+
+/* This line can be removed it was just for display on CodePen: */
+.container-range {
+    width: 100% !important;
+    margin: 20px 15px 15px 15px;
+}
+
+.range-width {
+    width: 80%;
+}
+
+.slider-labels {
+    margin-top: 15px;
+}
+
+/* Functional styling;
+   * These styles are required for noUiSlider to function.
+   * You don't need to change these rules to apply your design.
+   */
+.noUi-target,
+.noUi-target * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -ms-touch-action: none;
+    touch-action: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.noUi-target {
+    position: relative;
+    direction: ltr;
+}
+
+.noUi-base {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    /* Fix 401 */
+}
+
+.noUi-origin {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.noUi-handle {
+    position: relative;
+    z-index: 1;
+}
+
+.noUi-stacking .noUi-handle {
+    /* This class is applied to the lower origin when
+     its values is > 50%. */
+    z-index: 10;
+}
+
+.noUi-state-tap .noUi-origin {
+    -webkit-transition: left 0.3s, top 0.3s;
+    transition: left 0.3s, top 0.3s;
+}
+
+.noUi-state-drag * {
+    cursor: inherit !important;
+}
+
+/* Painting and performance;
+   * Browsers can paint handles in their own layer.
+   */
+.noUi-base,
+.noUi-handle {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+/* Slider size and handle placement;
+   */
+.noUi-horizontal {
+    height: 4px;
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    left: -7px;
+    top: -7px;
+    background-color: #a07936;
+}
+
+/* Styling;
+   */
+.noUi-background {
+    background: #d6d7d9;
+}
+
+.noUi-connect {
+    background: #a07936;
+    -webkit-transition: background 450ms;
+    transition: background 450ms;
+}
+
+.noUi-origin {
+    border-radius: 2px;
+}
+
+.noUi-target {
+    border-radius: 2px;
+}
+
+.noUi-target.noUi-connect {
+}
+
+/* Handles and cursors;
+   */
+.noUi-draggable {
+    cursor: w-resize;
+}
+
+.noUi-vertical .noUi-draggable {
+    cursor: n-resize;
+}
+
+.noUi-handle {
+    cursor: default;
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+}
+
+.noUi-handle:active {
+    border: 8px solid #345dbb;
+    border: 8px solid rgba(53, 93, 187, 0.38);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    left: -14px;
+    top: -14px;
+}
+
+/* Disabled state;
+   */
+[disabled].noUi-connect,
+[disabled] .noUi-connect {
+    background: #b8b8b8;
+}
+
+[disabled].noUi-origin,
+[disabled] .noUi-handle {
+    cursor: not-allowed;
+}
+
+.cart-link .cart-mini-overflow {
+    overflow: hidden;
+    max-height: 400px;
+    padding-right: 14px;
+    padding-top: 15px;
+}
+
+.cart-link .cart-mini-overflow::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* .cart-mini-overflow::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+} */
+
+.cart-link .cart-mini-overflow::-webkit-scrollbar-thumb {
+    background: #a79473;
+    border-radius: 10px;
+}
+
+.cart-link .cart-mini-overflow::-webkit-scrollbar-thumb:hover {
+    background: #a07936;
+}
+
+.cart-link .cart-mini-overflow:hover {
+    overflow-y: scroll;
+    padding-right: 7px;
+}
+
+.checkout-page .cart-mini-overflow {
+    overflow: hidden;
+    max-height: 500px;
+    padding-right: 50px;
+    padding-top: 30px;
+    padding-left: 72px;
+}
+
+.checkout-page .cart-mini-overflow::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* .cart-mini-overflow::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+} */
+
+.checkout-page .cart-mini-overflow::-webkit-scrollbar-thumb {
+    background: #a79473;
+    border-radius: 10px;
+}
+
+.checkout-page .cart-mini-overflow::-webkit-scrollbar-thumb:hover {
+    background: #a07936;
+}
+
+.checkout-page .cart-mini-overflow:hover {
+    overflow-y: scroll;
+    padding-right: 43px;
+}
+
+.checkout-page {
+    border-left: 1px #b8b8b8 solid;
+}
+
+.cart_attr_prod {
+    font-size: 11px;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.815);
+}
+
+.text-checkout {
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-checkout p {
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-family: "Bebas Neue", cursive;
+}
+
+.text-checkout p:nth-child(2) {
+    letter-spacing: 0px;
+    font-family: droid-serif, serif;
+}
+
+.dp-none {
+    display: none !important;
+}
+
+.search-icon-hover:hover {
+    color: #a07936 !important;
+}
+
+.search-bar-container {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar-container .search-bar-title {
+    margin-bottom: 50px;
+    font-size: 50px;
+}
+
+.search-bar-container .container #searchletter form input {
+    width: 640px;
+    height: 60px;
+    font-size: 20px !important;
+    color: #a07936;
+}
+
+.search-bar-container .container #searchletter form input:focus {
+    border: 2px solid #a07936;
+}
+
+.search-bar-container .container #searchletter .unpadding-top button {
+    height: 60px;
+    padding: 3px 20px 0px;
+    border: 2px solid #a07936;
+    overflow: hidden;
+}
+
+.search-bar-container .container #searchletter .unpadding-top {
+    overflow: hidden;
+}
+
+.search-bar-container .container #searchletter .group_input {
+    width: 640px;
+    height: 70px;
+}
+
+.search-bar-container .container #searchletter .unpadding-top button:hover {
+    background-color: #8b6a30;
+    transition: 0.3s;
+    transform: scale(1.4);
+}
+
+/* .search-bar-container .container #searchletter .unpadding-top button:hover i.fa {
+    color: #a07936;
+} */
+.search-bar-container .container #searchletter .unpadding-top button i.fa {
+    font-size: 22px;
+}
+
+.rating {
+    float: left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+.rating:not(:checked) > label {
+    float: right;
+    width: 1em;
+    padding: 0 0.1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 200%;
+    line-height: 1.2;
+    color: #ddd;
+}
+
+.rating:not(:checked) > label:before {
+    content: "★ ";
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: #f70;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #f70;
+}
+
+.rating > label:active {
+    position: relative;
+    transform: scale(1.4);
+}
+
+.btn-review-delete {
+    color: white;
+    width: 44px;
+    background-color: red;
+    border: 1px solid red;
+    transition: 0.2s;
+}
+
+.btn-review-delete:hover {
+    border: 1px solid red;
+    color: white;
+    background-color: red;
+    transform: scale(1.1);
+}
+
+.prod-list-reviews {
+    padding: 0px 10px 0px;
+    text-align: left;
+    border-top: 1px solid #ececec;
+}
+
+.spr-header {
+    margin-bottom: 10px;
+}
+
+.spr-content {
+    max-height: 1000px;
+    padding-right: 14px;
+    overflow-y: scroll;
+}
+
+.spr-review-content-body {
+    word-wrap: break-word;
+}
+
+.spr-content::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* .cart-mini-overflow::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+} */
+
+.spr-content::-webkit-scrollbar-thumb {
+    background: #a79473;
+    border-radius: 10px;
+}
+
+.spr-content::-webkit-scrollbar-thumb:hover {
+    background: #a07936;
+}
+
+.spr-content:hover {
+}
+
+.spr-review-title {
+    font-size: 18px !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #202020b6;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+/* chat */
+#center-text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#chat-circle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #b99452;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.6), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.btn#my-btn {
+    background: white;
+    padding-top: 13px;
+    padding-bottom: 12px;
+    border-radius: 45px;
+    padding-right: 40px;
+    padding-left: 40px;
+    color: #5865c3;
+}
+
+#chat-overlay {
+    background: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: none;
+}
+
+.chat-box {
+    display: none;
+    background: #efefef;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 350px;
+    max-width: 85vw;
+    max-height: 100vh;
+    border-radius: 5px;
+    /*   box-shadow: 0px 5px 35px 9px #464a92; */
+    box-shadow: 0px 5px 35px 9px #ccc;
+}
+
+.chat-box-toggle {
+    float: right;
+    margin-right: 15px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.chat-box-header {
+    background: #a07936;
+    height: 55px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 15px;
+}
+
+.chat-box-body {
+    position: relative;
+    height: 370px;
+    height: auto;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.chat-box-body:after {
+    content: "";
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAgOCkiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGNpcmNsZSBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIgY3g9IjE3NiIgY3k9IjEyIiByPSI0Ii8+PHBhdGggZD0iTTIwLjUuNWwyMyAxMW0tMjkgODRsLTMuNzkgMTAuMzc3TTI3LjAzNyAxMzEuNGw1Ljg5OCAyLjIwMy0zLjQ2IDUuOTQ3IDYuMDcyIDIuMzkyLTMuOTMzIDUuNzU4bTEyOC43MzMgMzUuMzdsLjY5My05LjMxNiAxMC4yOTIuMDUyLjQxNi05LjIyMiA5LjI3NC4zMzJNLjUgNDguNXM2LjEzMSA2LjQxMyA2Ljg0NyAxNC44MDVjLjcxNSA4LjM5My0yLjUyIDE0LjgwNi0yLjUyIDE0LjgwNk0xMjQuNTU1IDkwcy03LjQ0NCAwLTEzLjY3IDYuMTkyYy02LjIyNyA2LjE5Mi00LjgzOCAxMi4wMTItNC44MzggMTIuMDEybTIuMjQgNjguNjI2cy00LjAyNi05LjAyNS0xOC4xNDUtOS4wMjUtMTguMTQ1IDUuNy0xOC4xNDUgNS43IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTg1LjcxNiAzNi4xNDZsNS4yNDMtOS41MjFoMTEuMDkzbDUuNDE2IDkuNTIxLTUuNDEgOS4xODVIOTAuOTUzbC01LjIzNy05LjE4NXptNjMuOTA5IDE1LjQ3OWgxMC43NXYxMC43NWgtMTAuNzV6IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIvPjxjaXJjbGUgZmlsbD0iIzAwMCIgY3g9IjcxLjUiIGN5PSI3LjUiIHI9IjEuNSIvPjxjaXJjbGUgZmlsbD0iIzAwMCIgY3g9IjE3MC41IiBjeT0iOTUuNSIgcj0iMS41Ii8+PGNpcmNsZSBmaWxsPSIjMDAwIiBjeD0iODEuNSIgY3k9IjEzNC41IiByPSIxLjUiLz48Y2lyY2xlIGZpbGw9IiMwMDAiIGN4PSIxMy41IiBjeT0iMjMuNSIgcj0iMS41Ii8+PHBhdGggZmlsbD0iIzAwMCIgZD0iTTkzIDcxaDN2M2gtM3ptMzMgODRoM3YzaC0zem0tODUgMThoM3YzaC0zeiIvPjxwYXRoIGQ9Ik0zOS4zODQgNTEuMTIybDUuNzU4LTQuNDU0IDYuNDUzIDQuMjA1LTIuMjk0IDcuMzYzaC03Ljc5bC0yLjEyNy03LjExNHpNMTMwLjE5NSA0LjAzbDEzLjgzIDUuMDYyLTEwLjA5IDcuMDQ4LTMuNzQtMTIuMTF6bS04MyA5NWwxNC44MyA1LjQyOS0xMC44MiA3LjU1Ny00LjAxLTEyLjk4N3pNNS4yMTMgMTYxLjQ5NWwxMS4zMjggMjAuODk3TDIuMjY1IDE4MGwyLjk0OC0xOC41MDV6IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIvPjxwYXRoIGQ9Ik0xNDkuMDUgMTI3LjQ2OHMtLjUxIDIuMTgzLjk5NSAzLjM2NmMxLjU2IDEuMjI2IDguNjQyLTEuODk1IDMuOTY3LTcuNzg1LTIuMzY3LTIuNDc3LTYuNS0zLjIyNi05LjMzIDAtNS4yMDggNS45MzYgMCAxNy41MSAxMS42MSAxMy43MyAxMi40NTgtNi4yNTcgNS42MzMtMjEuNjU2LTUuMDczLTIyLjY1NC02LjYwMi0uNjA2LTE0LjA0MyAxLjc1Ni0xNi4xNTcgMTAuMjY4LTEuNzE4IDYuOTIgMS41ODQgMTcuMzg3IDEyLjQ1IDIwLjQ3NiAxMC44NjYgMy4wOSAxOS4zMzEtNC4zMSAxOS4zMzEtNC4zMSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuMjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvZz48L3N2Zz4=");
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+#chat-input {
+    background: #f4f7f9;
+    width: 100%;
+    position: relative;
+    height: 47px;
+    padding-top: 10px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    border: none;
+    resize: none;
+    outline: none;
+    border: 1px solid #ccc;
+    color: #888;
+    border-top: none;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    overflow: hidden;
+}
+
+.chat-input > form {
+    margin-bottom: 0;
+}
+
+#chat-input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #ccc;
+}
+
+#chat-input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #ccc;
+}
+
+#chat-input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #ccc;
+}
+
+#chat-input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #ccc;
+}
+
+.chat-submit {
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    border-radius: 50%;
+    color: #a07936;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+}
+
+.chat-logs {
+    padding: 15px;
+    height: 370px;
+    overflow-y: scroll;
+}
+
+.chat-logs::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* .cart-mini-overflow::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+} */
+
+.chat-logs::-webkit-scrollbar-thumb {
+    background: #a79473;
+    border-radius: 10px;
+}
+
+.chat-logs::-webkit-scrollbar-thumb:hover {
+    background: #a07936;
+}
+
+@media only screen and (max-width: 500px) {
+    .chat-logs {
+        height: 40vh;
+    }
+}
+
+.chat-msg.user > .msg-avatar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    float: left;
+    width: 15%;
+}
+
+.chat-msg.self > .msg-avatar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    float: right;
+    width: 15%;
+}
+
+.cm-msg-text {
+    background: white;
+    padding: 10px 15px 10px 15px;
+    color: #666;
+    max-width: 75%;
+    float: left;
+    margin-left: 10px;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    word-wrap: break-word;
+}
+
+.chat-msg {
+    clear: both;
+}
+
+.chat-msg.self > .cm-msg-text {
+    float: right;
+    margin-right: 10px;
+    background: #a07936;
+    color: white;
+}
+
+.cm-msg-button > ul > li {
+    list-style: none;
+    float: left;
+    width: 50%;
+}
+
+.cm-msg-button {
+    clear: both;
+    margin-bottom: 70px;
+}
+
+.lines-limit {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.article-comment-name {
+    font-size: 15px;
+    color: #916e32;
+    margin-right: 10px;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.article-comment-date {
+    text-transform: lowercase !important;
+    font-size: 11px;
+    color: #999;
+}
+
+.article-comment-content {
+    text-transform: none;
+}
+
+.article-comment-content p {
+    word-wrap: break-word;
+}
+
+.article-comment-content p {
+    margin-bottom: 0px !important;
+    font-size: 19px;
+}
+
+.article-comment-post {
+    margin: 0px 30px;
+    padding: 15px 0px 15px 0px;
+}
+
+.article-comment-container {
+    padding: 24px;
+    background-color: white;
+}
+
+.article-comment-title {
+    border-bottom: 1px solid #c8c8c8;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+.article-comment-reply a {
+    font-size: 12px;
+    color: #999;
+}
+
+.article-comment-reply a:hover {
+    color: #a07936;
+}
+
+.article-comment-reply button {
+    font-size: 12px;
+    color: #999;
+    border: none;
+    background-color: transparent;
+    height: 12px;
+    padding: 0px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.article-comment-reply button:hover {
+    color: #a07936;
+}
+
+.article-comment-reply {
+    display: inline-block;
+    margin: 5px 5px 2px 0px;
+}
+
+.comments-rep {
+    margin: 5px 0px;
+}
+
+.comments-rep ul {
+    margin-left: -5px !important;
+    margin-right: -5px !important;
+}
+
+.comments-rep ul li {
+    padding-left: 5px;
+    padding-right: 5px;
+}
